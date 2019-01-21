@@ -6,7 +6,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=250)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     sale_price = models.DecimalField(max_digits=10, decimal_places=2)
-    store = models.ForeignKey(Store, related_name='store_product')
+    store = models.ForeignKey(Store, related_name='store_product', on_delete=models.CASCADE)
     stock = models.PositiveIntegerField()
     active = models.BooleanField(default=True)
 
@@ -14,7 +14,7 @@ class Product(models.Model):
         return self.name
 
 class Purchase(models.Model):
-    pro_id = models.ForeignKey(Store, related_name='purchase_product')
+    pro_id = models.ForeignKey(Store, related_name='purchase_product', on_delete=models.CASCADE)
     quantity = models.DecimalField(max_digits=10, decimal_places=2)
     orderdate = models.DateTimeField(auto_now_add=True)
     amountpaid = models.DecimalField(max_digits=10, decimal_places=2)
