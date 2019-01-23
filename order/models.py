@@ -8,4 +8,5 @@ class Order(models.Model):
     orderstatus = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.quantity
+        return str(self.quantity)
+        
