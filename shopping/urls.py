@@ -16,20 +16,24 @@ Including another URLconf
 from django.conf.urls import url, include
 #from django.urls import path, include
 from django.contrib import admin
+from django.contrib.auth.models import User
 from rest_framework import routers
 from product import views
-#from order import views
-
+# from order import views
+# from store import views
 
 router = routers.DefaultRouter()
 router.register(r'product', views.ProductViewSet)
 router.register(r'purchase', views.PurchaseViewSet)
-#router.register(r'order', views.OrderViewSet)
+# router.register(r'order', views.OrderViewSet)
+# router.register(r'store', views.StoreViewSet)
+# # router.register(r'storefees', views.StorefeesViewSet)
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^product/', include(router.urls)),
-   # url(r'^order/', include(router.urls)),
+    url(r'^order/', include(router.urls)),
+    # url(r'^store/', include(router.urls)),
    
 ]

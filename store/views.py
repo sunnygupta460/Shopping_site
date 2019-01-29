@@ -1,6 +1,13 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from store.models import Store
+from rest_framework import viewsets
+from store.serializers import StoreSerializer, StorefeesSerializer
 
-from django.shortcuts import render
+class StoreViewSet(viewsets.ModelViewSet):
+	queryset = Store.objects.all()
+	serializer_class = StoreSerializer
 
-# Create your views here.
+class StorefeesViewSet(viewsets.ModelViewSet):
+	queryset = Storefees.objects.all()
+	serializer_class = StorefeesSerializer
+
+
