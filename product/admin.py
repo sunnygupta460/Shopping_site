@@ -1,17 +1,22 @@
 
 from django.contrib import admin
-from django.contrib import admin as django_admin
+#from django.contrib import admin as django_admin
+from import_export.admin import ImportExportModelAdmin
 
 from .models import Product, Purchase
 
-class ProductAdmin(django_admin.ModelAdmin):
-    list_display = ['name', 'price', 'store', 'sale_price', 'stock']
-    list_filters = ['price']
-    search_fields = ['name']
-admin.site.register(Product, ProductAdmin)
+@admin.register(Product)
 
-class PurchaseAdmin(django_admin.ModelAdmin):
+
+class ProductAdmin(ImportExportModelAdmin):
+
+    
+    list_display = ['name', 'price', 'store', 'sale_price', 'stock']
+    search_fields=('name',)
+
+admin.site.register(Purchase)
+
+class PurchaseAdmin(ImportExportModelAdmin):
+
     list_display = ['quantity','orderdate','amountpaid']
-    list_filters = ['orderdate']
-    search_fields = ['quantity']
-admin.site.register(Purchase, PurchaseAdmin)
+    search_fields=('quantity',)

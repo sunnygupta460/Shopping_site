@@ -1,6 +1,13 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from order.models import Order, Marketplace
+from rest_framework import viewsets
+from order.serializers import OrderSerializer, MarketplaceSerializer
 
-from django.shortcuts import render
 
-# Create your views here.
+
+class OrderViewSet(viewsets.ModelViewSet):
+	queryset = Order.objects.all()
+	serializer_class = OrderSerializer
+
+	class MarketplaceViewSet(viewsets.ModelViewSet):
+		queryset = Marketplace.objects.all()
+		serializers_class = MarketplaceSerializer

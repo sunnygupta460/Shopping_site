@@ -8,4 +8,12 @@ class Order(models.Model):
     orderstatus = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.quantity
+        return str(self.quantity)
+
+class Marketplace(models.Model):
+    name = models.CharField(max_length=100)
+    conn_method = models.CharField(max_length=45)
+
+    def __str__(self):
+        return self.name
+        
