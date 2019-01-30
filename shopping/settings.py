@@ -134,3 +134,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+---------------------------------------------------
+MWS_ACCESS_KEY = AKIAJYPN3FHMFSH3ZTOQ
+MWS_SECRET_KEY = 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
+MWS_ACCOUNT_ID = 892517388586
