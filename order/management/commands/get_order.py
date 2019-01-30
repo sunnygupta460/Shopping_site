@@ -6,18 +6,18 @@ class Command(BaseCommand):
 
 	def handle(self, *args, **options):
 
-		order_api = mws.Orders(
+		orders_api = mws.Orders(
 			access_key=os.environ['MWS_ACCESS_KEY'],
 			secret_key=os.environ['MWS_SECRET_KEY'],
 			account_id=os.environ['MWS_ACCOUNT_ID'],
 			region='IN',
 			)
 		
-		service_status = order_api.get_service_status()
+		service_status = orders_api.get_service_status()
 		service_status
 		service_status.original
 		service_status.parsed
 		service_status.response
 
 		# Create the entry in the order model
-		Order.objects.create()
+		Orders.objects.create()
