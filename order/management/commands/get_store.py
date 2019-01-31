@@ -1,14 +1,15 @@
 from django.core.management.base import BaseCommand
 import mws, os
 from store.models import Store
+from shopping import settings
 
 class Command(BaseCommand):
 
 	def handle(self, *args, **options):
-		store_api = mws.Store(
-			access_key=os.environ['MWS_ACCESS_KEY'],
-			secret_key=os.environ['MWS_SECRET_KEY'],
-			account_id=os.environ['MWS_ACCOUNT_ID'],
+		store_api = mws.Stores(
+			access_key=settings.MWS_ACCESS_KEY,
+			secret_key=settings.MWS_SECRET_KEY,
+			account_id=settings.MWS_ACCOUNT_ID,
 			region='IN',
 			)
 		
