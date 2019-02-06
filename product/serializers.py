@@ -11,4 +11,4 @@ class ProductSerializer(serializers.ModelSerializer):
 class PurchaseSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Purchase
-		fields =('store_id','quantity','orderdate','amountpaid')
+		fields =('store_id','quantity','order_date','amountpaid')

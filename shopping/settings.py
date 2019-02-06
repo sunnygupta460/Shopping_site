@@ -28,6 +28,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
     'import_export',
     'rest_framework',
     'order',
@@ -80,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'connect',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '$unny123',
         'HOST': 'localhost',
         'PORT': '',
 
@@ -132,6 +133,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-MWS_ACCESS_KEY='AKIAJ44AM3GC2N7IJDIA'
-MWS_SECRET_KEY='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'
-MWS_ACCOUNT_ID='892517388586'
+LOGIN_REDIRECT_URL = '/'
+
+

@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-#from django.urls import path, include
+from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers
@@ -34,6 +34,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^product/', include(router.urls)),
     url(r'^order/', include(router.urls)),
-    # url(r'^store/', include(router.urls)),
+    path('', include('home.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))
+    # path('success/', success, name="user_success"),
+    # path('logout/', user_logout, name="user_logout"),
    
 ]

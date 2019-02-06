@@ -17,7 +17,7 @@ class Product(models.Model):
 class Purchase(models.Model):
     store = models.ForeignKey(Store, related_name='purchase_product', on_delete=models.CASCADE)
     quantity = models.DecimalField(max_digits=10, decimal_places=2)
-    orderdate = models.DateTimeField(auto_now_add=True)
+    order_date = models.DateTimeField(auto_now_add=True)
     amountpaid = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
