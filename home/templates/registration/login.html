@@ -6,7 +6,7 @@
 </head>
 <body>
 	{% if form.errors %}
-	<p><hr size="120" color="gray"  Login Form ><font color= "red">There is something wrong with what you entered!</font></hr></p>
+	<p><hr size="120" color="gray"><font color= "red">There is something wrong with what you entered!</font></hr></p>
 	{% endif %}
 
 	{% if next %}
@@ -19,7 +19,7 @@
 		<p>Username: {{ form.username }}</p>
 		<p>Password: {{ form.password }}</p>
 
-		<p><input type="submit" = value="login"></p>
+		<p><input type="submit" value="login"></p>
 		<input type="hidden" name="next" value="{{ next }}">
 	</form>
 </body>

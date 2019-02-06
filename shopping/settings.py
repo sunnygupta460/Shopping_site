@@ -78,13 +78,8 @@ WSGI_APPLICATION = 'shopping.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'connect',
-        'USER': 'root',
-        'PASSWORD': '$unny123',
-        'HOST': 'localhost',
-        'PORT': '',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -136,3 +131,6 @@ REST_FRAMEWORK = {
 LOGIN_REDIRECT_URL = '/'
 
 
+MWS_ACCESS_KEY = "AKIAJ44AM3GC2N7IJDIA"
+MWS_ACCOUNT_ID = "892517388586"
+MWS_SECRET_KEY = "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"

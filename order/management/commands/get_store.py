@@ -3,6 +3,7 @@ import mws, os
 from store.models import Store
 from shopping import settings
 
+
 class Command(BaseCommand):
 
 	def handle(self, *args, **options):

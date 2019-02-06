@@ -1,16 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="eng">
 <head>
 	<meta charset="UTF-8">
 	<title>The Index </title>
+    <link href="{% static 'home/css/bootstrap.min.css' %}">
 </head>
 <body>
-	<h1>This is Dashboard Page!</h1>
-	{% if user.is_authenticated %}
-	<h2>Your name is: {{ user.username }}</h2>
-	{% else %}
-	<h2>You are not logged in.</h2>
-	{% endif %}
+
 
 	<form method="post" action="{% url 'login' %}">
 		{% csrf_token %}

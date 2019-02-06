@@ -10,7 +10,6 @@ et-xmlfile==1.0.1
 idna==2.8
 jdcal==1.4
 mws==0.8.6
-mysqlclient==1.4.1
 odfpy==1.4.0
 openpyxl==2.5.14
 pytz==2018.9

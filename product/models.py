@@ -1,6 +1,6 @@
 from django.db import models
 from store.models import Store
-from django.utils.text import slugify
+
 
 class Product(models.Model):
     name = models.CharField(max_length=250)
@@ -14,13 +14,12 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
 class Purchase(models.Model):
     store = models.ForeignKey(Store, related_name='purchase_product', on_delete=models.CASCADE)
     quantity = models.DecimalField(max_digits=10, decimal_places=2)
     order_date = models.DateTimeField(auto_now_add=True)
-    amountpaid = models.DecimalField(max_digits=10, decimal_places=2)
+    amount_paid = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return str(self.quantity)
-
-        
